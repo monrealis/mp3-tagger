@@ -27,9 +27,11 @@ class ModifyTrackNumbersTest {
     }
 
     private void update(List<LoadedFile> files) {
+        int index = 1;
         for (LoadedFile file : files) {
             ID3v2 tag = file.id3v2Tag();
-            tag.setTrack(findNewTrackNumber(tag));
+            tag.setTrack(Integer.toString(index));
+            ++index;
         }
     }
 
@@ -66,7 +68,7 @@ class ModifyTrackNumbersTest {
     }
 
     private List<String> readLines() {
-        Path p = Paths.get("src/test/resources/input.txt");
+        Path p = Paths.get("src/test/resources/files.txt");
         try {
             return Files.readAllLines(p);
         } catch (IOException e) {
@@ -74,6 +76,7 @@ class ModifyTrackNumbersTest {
         }
     }
 
+    @SuppressWarnings("unused")
     private String findNewTrackNumber(ID3v2 tag) {
         int part = Integer.parseInt(tag.getPartOfSet());
         int track = Integer.parseInt(tag.getTrack());
