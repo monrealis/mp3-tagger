@@ -9,7 +9,7 @@ import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.Mp3File;
 
 class InspectTest {
-    String path = null;
+    String path;
 
     @Test
     void test() throws Exception {
