@@ -12,7 +12,7 @@ class InspectTest {
     String path;
 
     @Test
-    void test() throws Exception {
+    void printTags() throws Exception {
         assumeTrue(path != null);
 
         Mp3File file = new Mp3File(path);

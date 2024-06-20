@@ -104,7 +104,7 @@ class ModifyTrackNumbersTest {
         public ID3v2 id3v2Tag() {
             return file.getId3v2Tag();
         }
-        
+
         @Override
         public String toString() {
             return relativePath;
