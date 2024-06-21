@@ -2,17 +2,21 @@ package eu.vytenis.mp3tagger;
 
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+import java.io.IOException;
+
 import org.junit.jupiter.api.Test;
 
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.ID3v2;
+import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
+import com.mpatric.mp3agic.UnsupportedTagException;
 
 class InspectTest {
     String path;
 
     @Test
-    void printTags() throws Exception {
+    void printTags() throws UnsupportedTagException, InvalidDataException, IOException {
         assumeTrue(path != null);
 
         Mp3File file = new Mp3File(path);
